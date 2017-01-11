@@ -1,0 +1,99 @@
+
+
+.btn:focus,.btn:active {
+   outline: none !important;
+}
+
+// BUTTON NORMAL //-----------------------------------------------------------------------------------------
+
+@btn-mbe-normal-color:   #fff;
+@btn-mbe-normal-bg:      #4180ab;
+@btn-mbe-normal-border:  @btn-mbe-normal-bg;
+
+@btn-mbe-normal-color-hover:   #fff;
+@btn-mbe-normal-bg-hover:      #4180ab;
+@btn-mbe-normal-border-hover:  @btn-mbe-normal-bg-hover;
+
+@btn-mbe-normal-color-active:  #fff;
+@btn-mbe-normal-bg-active:     #4180ab;
+@btn-mbe-normal-border-active: @btn-mbe-normal-bg-active;
+
+@btn-mbe-normal-color-focus: @btn-mbe-normal-color;
+@btn-mbe-normal-bg-focus:    @btn-mbe-normal-bg;
+@btn-mbe-normal-border-focus:@btn-mbe-normal-bg-focus;
+
+@btn-mbe-normal-color-disabled:  lighten(@btn-mbe-normal-color, 50%);
+@btn-mbe-normal-bg-disabled:     #D5E1CE;
+@btn-mbe-normal-border-disabled: @btn-mbe-normal-bg-disabled;
+
+.btn-mbe-normal {
+  .button-variant(@btn-mbe-normal-color; @btn-mbe-normal-bg; @btn-mbe-normal-border);
+}
+
+.btn-mbe-normal:hover {
+  .button-variant(@btn-mbe-normal-color-hover; @btn-mbe-normal-bg-hover; @btn-mbe-normal-border-hover);
+}
+
+.btn-mbe-normal:active {
+  .button-variant(@btn-mbe-normal-color-active; @btn-mbe-normal-bg-active; @btn-mbe-normal-border-active);
+}
+
+.btn-mbe-normal:focus {
+  .button-variant(@btn-mbe-normal-color-focus; @btn-mbe-normal-bg-focus; @btn-mbe-normal-border-focus);
+}
+
+.btn-mbe-normal:disabled {
+  .button-variant(@btn-mbe-normal-color-disabled; @btn-mbe-normal-bg-disabled; @btn-mbe-normal-border-disabled);
+}
+
+.btn-mbe-normal:visited {
+  .button-variant(@btn-mbe-normal-color; @btn-mbe-normal-bg; @btn-mbe-normal-border);
+}
+
+
+// BUTTON ATTACK //-----------------------------------------------------------------------------------------
+
+
+@btn-mbe-attack-color:   #000;
+@btn-mbe-attack-bg:      #A0DE4F;
+@btn-mbe-attack-border:  @btn-mbe-attack-bg;
+
+@btn-mbe-attack-color-hover:   #000;
+@btn-mbe-attack-bg-hover:      #CBED9E;
+@btn-mbe-attack-border-hover:  @btn-mbe-attack-bg-hover;
+
+@btn-mbe-attack-color-active:  #000;
+@btn-mbe-attack-bg-active:     #7BAA3B;
+@btn-mbe-attack-border-active: @btn-mbe-attack-bg-active;
+
+@btn-mbe-attack-color-focus: @btn-mbe-attack-color;
+@btn-mbe-attack-bg-focus:    @btn-mbe-attack-bg;
+@btn-mbe-attack-border-focus:@btn-mbe-attack-bg-focus;
+
+@btn-mbe-attack-color-disabled:  lighten(@btn-mbe-attack-color, 50%);
+@btn-mbe-attack-bg-disabled:     #D5E1CE;
+@btn-mbe-attack-border-disabled: @btn-mbe-attack-bg-disabled;
+
+.btn-mbe-attack {
+  .button-variant(@btn-mbe-attack-color; @btn-mbe-attack-bg; @btn-mbe-attack-border);
+}
+
+.btn-mbe-attack:hover {
+  .button-variant(@btn-mbe-attack-color-hover; @btn-mbe-attack-bg-hover; @btn-mbe-attack-border-hover);
+}
+
+.btn-mbe-attack:active {
+  .button-variant(@btn-mbe-attack-color-active; @btn-mbe-attack-bg-active; @btn-mbe-attack-border-active);
+}
+
+.btn-mbe-attack:focus {
+  .button-variant(@btn-mbe-attack-color-focus; @btn-mbe-attack-bg-focus; @btn-mbe-attack-border-focus);
+}
+
+.btn-mbe-attack:disabled {
+  .button-variant(@btn-mbe-attack-color-disabled; @btn-mbe-attack-bg-disabled; @btn-mbe-attack-border-disabled);
+}
+
+.btn-mbe-attack:visited {
+  .button-variant(@btn-mbe-attack-color; @btn-mbe-attack-bg; @btn-mbe-attack-border);
+}
