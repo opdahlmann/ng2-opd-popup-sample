@@ -1,31 +1,120 @@
-# Ng2OpdPopupSample
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Popup component for Angular 2
 
-## Code scaffolding
+in your module include:
+```javascript
+import {PopupModule} from 'ng2-opd-popup';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+@NgModule({
+  imports: [
+    ...
+    PopupModule.forRoot()
+  ],
+  declarations: [
+   ...
+  ],
+  providers: [
+   ...
+  ],
+  bootstrap: [...]
+})
+```
 
-## Build
+in your view (html)
+```html
+<popup>
+    Add your custom html elements here
+</popup>
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+In your component:
 
-## Running unit tests
+```javascript
+import {Popup} from 'ng2-opd-popup';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+export class YourComponent {
+ constructor(private popup:Popup) { }
 
-## Running end-to-end tests
+ ClickButton(){
+    this.popup.show();
+  }
+}
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+If you want to have multiple popups in your page with different html content you can use @ViewChild, in that case you don't need to inject it in your constructor
 
-## Deploying to Github Pages
+in your view (html)
+```html
+<popup  #popup1>
+    Add your custom html elements here
+</popup>
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
+<popup  #popup2>
+    Add your other custom html elements here
+</popup>
+```
+In your component:
 
-## Further help
+```javascript
+import { Component, ViewChild } from '@angular/core';
+import {Popup} from 'ng2-opd-popup';
 
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+export class YourComponent {
+  
+  @ViewChild('popup1') popup1: Popup;
+  @ViewChild('popup2') popup2: Popup;
+  
+  constructor() { }
+
+  ClickButton(){
+    this.popup1.show();
+  }
+
+  ClickAnotherButton(){
+    this.popup2.show();
+  }
+}
+```
+
+Options:
+
+You can set the following options for your popup:
+
+```javascript
+this.popup.options = {
+    header: "Your custom header",
+    color: "#5cb85c", // red, blue....
+    widthProsentage: 40, // The with of the popou measured by browser width
+    animationDuration: 1, // in seconds, 0 = no animation
+    showButtons: true, // You can hide this in case you want to use custom buttons
+    confirmBtnContent: "OK", // The text on your confirm button
+    cancleBtnContent: "Cancel", // the text on your cancel button
+    confirmBtnClass: "btn btn-default", // your class for styling the confirm button
+    cancleBtnClass: "btn btn-default", // you class for styling the cancel button
+    animation: "fadeInDown" // 'fadeInLeft', 'fadeInRight', 'fadeInUp', 'bounceIn','bounceInDown'
+};
+
+  this.popup.show(this.popup.options);
+```
+
+Events:
+
+You can subscribe to the confirm and cancel button event.
+
+```html
+<popup  (confirmClick)="YourConfirmEvent()" (cancelClick)="YourCancelEvent()">
+    Add your own html elements here
+</popup>
+```
+
+
+```javascript
+YourConfirmEvent(){
+  alert('You cliked confirm');
+}
+
+YourCancelEvent(){
+  alert('You cliked cancel');
+}
+```
