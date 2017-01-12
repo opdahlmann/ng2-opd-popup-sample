@@ -1,6 +1,9 @@
 
 
-Popup component for Angular 2
+## Popup component for Angular 2 - sample
+
+> [ONLINE DEMO](http://dahlmann.no/ng2-opd-popup-sample/)
+
 
 in your module include:
 ```javascript
