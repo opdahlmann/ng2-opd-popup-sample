@@ -2,7 +2,8 @@
 
 ## Popup component for Angular 2 - sample
 
-> [ONLINE DEMO](http://dahlmann.no/ng2-opd-popup-sample/)
+> - [ONLINE DEMO](http://dahlmann.no/ng2-opd-popup-sample/)
+> - Go to [ng2-opd-popup](https://www.npmjs.com/package/ng2-opd-popup) on npm
 
 
 in your module include:
