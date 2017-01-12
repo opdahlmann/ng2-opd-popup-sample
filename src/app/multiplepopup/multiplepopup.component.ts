@@ -7,12 +7,16 @@ import {Popup} from 'ng2-opd-popup';
   styleUrls: ['./multiplepopup.component.css']
 })
 export class MultiplepopupComponent implements OnInit {
+  
+  email:string;
+  password:string;
 
   constructor() { }
   @ViewChild('popup1') popup1: Popup;
   @ViewChild('popup2') popup2: Popup;
   @ViewChild('popup3') popup3: Popup;
   @ViewChild('popup4') popup4: Popup;
+  @ViewChild('popup5') popup5: Popup;
   ngOnInit() {
   }
 
@@ -59,9 +63,26 @@ export class MultiplepopupComponent implements OnInit {
     this.popup4.show(this.popup4.options);
   }
 
+  showPopup5(){
+    this.popup5.options = {
+            cancleBtnClass: "btn btn-default", 
+            confirmBtnClass: "btn btn-mbe-attack",
+            color: "#A0DE4F",
+            header: "Login...",
+            widthProsentage:50,
+            animation: "bounceInDown",
+            confirmBtnContent: "Login"}
+    this.popup5.show(this.popup5.options);
+  }
+
   YourConfirmEvent(){
-  alert('You cliked confirm');
-  this.popup4.hide();
-}
+    alert('You cliked confirm');
+    this.popup4.hide();
+  }
+
+  login(){
+    alert('Email: ' + this.email + '  Password: ' + this.password);
+    this.popup5.hide();
+  }
 
 }

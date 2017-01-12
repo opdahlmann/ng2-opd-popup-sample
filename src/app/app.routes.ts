@@ -17,7 +17,7 @@ const appRoutes: Routes = [
      },
     {
       path: '**', 
-      component: SinglepopupComponent,
+      component: MultiplepopupComponent,
     }
 ];
 

@@ -24,6 +24,42 @@
 <popup #popup4 (confirmClick)="YourConfirmEvent()">
    You can subscribe to the confirm and cancel button event, or you can hide the buttons and add your own.
     <br>
+    <br>
+    <p>(confirmClick)="YourConfirmEvent()" </p>
+    <p>(cancelClick)="YourCancelEvent()" </p>
+    
+    <br>
+</popup>
+
+<popup #popup5 (confirmClick)="login()">
+
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="inputEmai3" class="col-sm-3 control-label">Email</label>
+        <div class="col-sm-7">
+        <input type="text" class="form-control" name="email" [(ngModel)]="email" id="email" placeholder="email">
+        </div>
+    </div>
+     <div class="form-group">
+        <label for="inputEmai3" class="col-sm-3 control-label">Password</label>
+        <div class="col-sm-7">
+        <input type="password" class="form-control" name="password" [(ngModel)]="password" id="password" placeholder="password">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-group text-right">
+            <div class="col-sm-offset-3 col-sm-7">
+            <div class="checkbox">
+                <label>
+                <input type="checkbox" id="RequireLogin" name="RequireLogin"> Remember Me
+                </label>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+
 </popup>
 <br><br>
 <div class="text-center">
@@ -36,6 +72,7 @@
     <button class="btn btn-mbe-normal sp" (click)="showPopup2()">Size & Color</button>
     <button class="btn btn-mbe-normal sp" (click)="showPopup3()">Animations</button>
     <button class="btn btn-mbe-normal sp" (click)="showPopup4()">Events</button>
+    <button class="btn btn-mbe-normal sp" (click)="showPopup5()">Forms sample</button>
 </div>
 <br><br><br>
 
